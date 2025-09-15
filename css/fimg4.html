@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Changer</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    .image-box {
+      width: 300px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #333;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-box">
+    <img id="displayedImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykzoZeCE0p7LeuyHnLYCdPP2jju9d5PaMeA&s" alt="Random">
+  </div>
+
+  <button onclick="changeImage()">Change</button>
+
+  <script>
+    function changeImage() {
+      let img = document.getElementById("displayedImage");
+      let randomNum = Math.floor(Math.random() * 1000);
+      img.src ="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg";
+    }
+  </script>
+
+</body>
+</html>

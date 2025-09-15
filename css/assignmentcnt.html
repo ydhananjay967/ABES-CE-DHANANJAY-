@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counter App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .box {
+      width: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    .counter {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      font-size: 24px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="header">
+      <div class="left">
+        <div class="logo">🌟</div>
+        <div class="title">Counter App</div>
+      </div>
+      <div id="counter">0</div>
+    </div>
+
+    <div class="counter">Count: <span id="count-value">0</span></div>
+
+    <div class="buttons">
+      <button id="minus">-</button>
+      <button id="plus">+</button>
+    </div>
+  </div>
+
+  <script>
+    var counter = 0;
+    var counterEl = document.getElementById("counter");
+    var countValueEl = document.getElementById("count-value");
+    var plusBtn = document.getElementById("plus");
+    var minusBtn = document.getElementById("minus");
+
+    plusBtn.onclick = function() {
+      if (counter < 10) {
+        counter = counter + 1;
+        counterEl.innerHTML = counter;
+        countValueEl.innerHTML = counter;
+        if (counter == 10) {
+          alert("Maximum value reached");
+        }
+      } else {
+        alert("Maximum value reached");
+      }
+    };
+
+    minusBtn.onclick = function() {
+      if (counter > 0) {
+        counter = counter - 1;
+        counterEl.innerHTML = counter;
+        countValueEl.innerHTML = counter;
+      } else {
+        alert("Minimum value reached");
+      }
+    };
+  </script>
+
+</body>
+</html>

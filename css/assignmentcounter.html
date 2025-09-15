@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Counter </title>
+  <style>
+    img{
+      height: 200px;
+      width: 200px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+  <div class="img">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9YYh5Fk1u9VsWWr1MhkyQeOzeNbtnnMO96g&s" alt="">
+  <h2>Counter: <span id="count">0</span></h2>
+  <button onclick="decrease()"><bold>-</bold></button>
+  <button onclick="increase()"><bold>+</bold></button>
+
+  <script>
+    var count = 0;
+    function increase() {
+      count++;
+      document.getElementById("count").innerText = count;
+    }
+    function decrease() {
+      count--;
+      document.getElementById("count").innerText = count;
+    }
+  </script>
+</body>
+</html>
