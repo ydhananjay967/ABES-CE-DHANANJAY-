@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Cart by Branch</title>
+  <style>
+    /* Box container styling */
+    #box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: aqua;
+      padding: 20px;
+    }
+
+    /* Individual cart styling */
+    .cart {
+      background-color: lightyellow;
+      color: blue;
+      height: 300px;
+      width: 250px;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styling for student details */
+    .cart p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    /* Styling for headings */
+    h3 {
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Box container to hold the student carts -->
+  <div id="box">
+    <!-- Empty divs for each student cart, populated dynamically -->
+  </div>
+
+  <script>
+    // Student data as JSON-like structure in JavaScript
+    const students = [
+      { "name": "Aman", "roll_No": "10", "branch": "CE" },
+      { "name": "Varun", "roll_No": "11", "branch": "IT" },
+      { "name": "Rahul", "roll_No": "12", "branch": "CSE" },
+      { "name": "Priya", "roll_No": "13", "branch": "ECE" },
+      { "name": "Shiv", "roll_No": "14", "branch": "CE" },
+      { "name": "Ravi", "roll_No": "15", "branch": "CSE" }
+    ];
+
+    // Group students by branch using a helper function
+    const groupedStudents = students.reduce((acc, student) => {
+      if (!acc[student.branch]) {
+        acc[student.branch] = [];
+      }
+      acc[student.branch].push(student);
+      return acc;
+    }, {});
+
+    // Function to create and display the carts for each branch group
+    function createCart(branch, studentsInBranch) {
+      const cart = document.createElement('div');
+      cart.classList.add('cart');
+      
+      // Add heading with branch name
+      cart.innerHTML = `<h3>Branch: ${branch}</h3>`;
+
+      // Add students' details in the cart
+      studentsInBranch.forEach(student => {
+        const studentInfo = document.createElement('p');
+        studentInfo.textContent = `${student.name} (Roll No: ${student.roll_No})`;
+        cart.appendChild(studentInfo);
+      });
+
+      // Append the cart to the main box container
+      document.getElementById('box').appendChild(cart);
+    }
+
+    // Create and display carts for each branch group
+    for (let branch in groupedStudents) {
+      createCart(branch, groupedStudents[branch]);
+    }
+  </script>
+
+</body>
+</html>

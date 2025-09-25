@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table with Lists</title>
+  <style>
+    /* Table styling */
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      text-align: left; /
+    }
+
+    
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Table cell styling */
+    td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      height: 100px; /
+      display: flex;
+      justify-content: flex-start; 
+      align-items: center; 
+    }
+
+    
+    ul {
+      list-style-type: square; 
+      padding-left: 20px; 
+      margin: 0;
+    }
+
+  
+    li {
+      margin: 5px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Details</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Red</li>
+            <li>Yellow</li>
+            <li>Orange</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Fruit</li>
+            <li>Fresh</li>
+            <li>Sweet</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>Carrot</li>
+            <li>Potato</li>
+            <li>Tomato</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Orange</li>
+            <li>Brown</li>
+            <li>Red</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Vegetable</li>
+            <li>Healthy</li>
+            <li>Nutritious</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Website</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            section {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#execution">Execution</a></li>
+                <li><a href="#reference">Reference</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Section -->
+    <section id="content">
+        <h2>Content</h2>
+        <p><strong>Topic 1:</strong> HTML Basics</p>
+        <p><strong>Topic 2:</strong> CSS Styling</p>
+        <p>Learn the fundamentals of HTML and CSS, including elements, attributes, styling, and layout.</p>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+        <h2>Quiz</h2>
+        <p>Test your knowledge with the following questions:</p>
+        <form>
+            <label for="q1">What does HTML stand for?</label>
+            <input type="text" id="q1" placeholder="Enter your answer"><br><br>
+
+            <label for="q2">What is the purpose of CSS?</label>
+            <input type="text" id="q2" placeholder="Enter your answer"><br><br>
+
+            <input type="submit" value="Submit Answers">
+        </form>
+    </section>
+
+    <!-- Execution Section -->
+    <section id="execution">
+        <h2>Execution</h2>
+        <p>Try out your HTML and CSS code here:</p>
+        <textarea id="html-code" placeholder="Write your HTML code here..." rows="8" cols="50"></textarea><br><br>
+        <textarea id="css-code" placeholder="Write your CSS code here..." rows="8" cols="50"></textarea><br><br>
+        <button onclick="runCode()">Run Code</button>
+        <div id="output" style="margin-top: 20px;"></div>
+
+        <script>
+            function runCode() {
+                let htmlCode = document.getElementById('html-code').value;
+                let cssCode = document.getElementById('css-code').value;
+                let outputFrame = document.getElementById('output');
+                outputFrame.innerHTML = htmlCode;
+
+                let style = document.createElement('style');
+                style.innerHTML = cssCode;
+                outputFrame.appendChild(style);
+            }
+        </script>
+    </section>
+
+    <!-- Reference Section -->
+    <section id="reference">
+        <h2>Reference</h2>
+        <p>Check out these resources to enhance your learning:</p>
+        <ul>
+            <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+            <li><a href="https://freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tutorial Website</p>
+    </footer>
+
+</body>
+</html>
